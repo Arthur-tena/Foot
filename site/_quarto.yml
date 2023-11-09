@@ -44,8 +44,8 @@ website:
     left:
        - text: "Overview"
          href: Site/index.qmd
-      - sidebar:Barça
-      - sidebar:Analyse
+       - sidebar:Barça
+       - sidebar:Analyse
   sidebar:
     - id: Barça
       title: "Barça"
