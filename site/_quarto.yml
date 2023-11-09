@@ -1,19 +1,82 @@
 project:
   type: website
-
+  render:
+    - Site/index.qmd
+    - FCB/FCB.qmd
+    - Analyse/Analyse.qmd
 website:
-  title: "site"
+  back-to-top-navigation: true
+  page-navigation: true # true not working in website
+  title: "Site de foot "
+  site-url: https://arthur-tena.github.io/Foot/
+  repo-url: https://github.com/arthur-tena/Foot
+  repo-actions: [source, issue]
+  # sidebar:
+  # left:
+  #   contents:
+  #     - section: "Overview"
+  #       contents:
+  #         - href: index.qmd
+  #     - section: "Courses"
+  # contents:
+  #   - href: Courses/Bash/tp.qmd
+  #   - href: Courses/Git/tp.qmd
+  #   - href: Courses/IDE/tp.qmd
+  #   - href: Courses/Venv/tp.qmd
+  #   - href: Courses/CI/tp.qmd
+  #   - href: Courses/Docs/tp.qmd
+  #   - href: Courses/Python-modules/tp.qmd
+  #   - href: Courses/ClassesExceptions/tp.qmd
+  #   - href: Courses/Test/tp.qmd
+  #   - href: Courses/Pandas/tp.qmd
+  #   - href: Courses/Numpy/tp.qmd
+  #   - href: Courses/ScipyNumpy/tp.qmd
+  #   - href: Courses/TimeMemory/tp.qmd
+  # menu: false
   navbar:
+    title: "Site de Foot"
+    background: primary
+    search: true
+    tools:
+      - icon: github
+        href: https://github.com/arthur-tena/Foot
+        text: GitHub
     left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+       - text: "Overview"
+         href: Site/index.qmd
+      - sidebar:Barça
+      - sidebar:Analyse
+  sidebar:
+    - id: Barça
+      title: "Barça"
+      contents:
+        - FCB/FCB.qmd
+    - id: Analyse
+      title: "Analyse de match"
+      collapse-level: 3
+      contents:
+        - Analyse/Analyse.qmd
 
 format:
   html:
-    theme: cosmo
-    css: styles.css
     toc: true
-
-
-
+    theme:
+      spacelab
+      # light: spacelab
+    # mainfont: Atkinson Hyperlegible
+    html-math-method: katex
+    number-sections: false
+    toc-depth: 3
+    code-fold: false
+    code-tools:
+      toggle: false
+      source: false
+    code-overflow: wrap
+    highlight-style: github
+    fig-responsive: true
+    fig.align: center
+    reference-location: margin
+    citation-location: margin
+    # self-contained: true
+    # fig-format: svg
+    css: custom.scss
